@@ -1,0 +1,12 @@
+.Footer {
+    background-color: rgb(242, 141, 141);
+    padding: 1.5em;
+}
+.back {
+    margin-top: -1em;
+    float: right;
+}
+.next {
+    margin-top: -1em;
+    float: right;
+}

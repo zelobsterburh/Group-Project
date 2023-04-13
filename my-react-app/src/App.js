@@ -1,4 +1,7 @@
 import Card from './elements/Card';
+import Menu from './elements/Menu';
+import SignIn from './elements/SignIn';
+import Footer from './elements/Footer';
 const ITEMS = [
   {
     img: "smiley.jfif",
@@ -9,11 +12,14 @@ const ITEMS = [
 function App() {
   return (
     <div className="App">
+      <Menu/>
       <div className="List">
         {ITEMS.map((item) => (
           <Card img={item.img} name={item.name} description={item.description} />
         ))}
       </div>
+          <SignIn/>
+          <Footer/>
     </div>
   );
 }
