@@ -1,4 +1,5 @@
-function Card({ img, name, description }) {
+
+function Card({ img, name, description, isLoggedIn}) {
     return (
         <div className="Card" style={{
             backgroundImage: `url("` + img + `")`
@@ -6,9 +7,11 @@ function Card({ img, name, description }) {
             <div className="details">
                 <h1>
                     {name}
+                    if(isLoggedIn == true) {
                     <button className="edit material-symbols-outlined">
                         edit
                     </button>
+                    }
                 </h1>
                 <p>
                     {description}

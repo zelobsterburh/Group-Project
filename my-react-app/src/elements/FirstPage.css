@@ -2,7 +2,9 @@
     background-color: rgb(242, 141, 141);
     padding: 2em;
 }
-.Login {
+.login {
     margin-top: -1em;
     float: right;
+    text-decoration: none;
+    
 }

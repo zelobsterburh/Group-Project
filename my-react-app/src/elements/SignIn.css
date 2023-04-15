@@ -11,11 +11,11 @@ input[type=text], input[type=password] {
 }
 .button {
     background-color: salmon;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 7px 12px;
     border: none;
     cursor: pointer;
     width: 100%;
+    text-decoration: none;
   }
   .loginform {
     padding: 2em;
