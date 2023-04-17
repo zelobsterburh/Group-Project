@@ -38,7 +38,7 @@ function SecondPage() {
             </div>
           <div className="List">
             {ITEMS.map((item) => (
-              <Card img={item.img} name={item.name} description={item.description} />
+              <Card img={item.img} name={item.name} description={item.description} isLoggedIn={true}/>
             ))}
           </div>
         </div>

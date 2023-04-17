@@ -5,7 +5,7 @@ function Card({ img, name, description, isLoggedIn}) {
         <div className="Card" style={{
             backgroundImage: `url("` + img + `")`
         }}>
-            <Ebutt name={name} description={description} isLoggedIn={isLoggedIn} />
+            <Ebutt img={img} name={name} description={description} isLoggedIn={isLoggedIn} />
         </div>
     )
 }
