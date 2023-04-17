@@ -1,11 +1,11 @@
 import Ebutt from "./eButt";
 
-function Card({ img, name, description, isLoggedIn}) {
+function Card({ item, isLoggedIn}) {
     return (
         <div className="Card" style={{
-            backgroundImage: `url("` + img + `")`
+            backgroundImage: `url("` + item.img + `")`
         }}>
-            <Ebutt img={img} name={name} description={description} isLoggedIn={isLoggedIn} />
+            <Ebutt item={item} isLoggedIn={isLoggedIn} />
         </div>
     )
 }
