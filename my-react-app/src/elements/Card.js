@@ -5,16 +5,7 @@ function Card({ img, name, description, isLoggedIn}) {
         <div className="Card" style={{
             backgroundImage: `url("` + img + `")`
         }}>
-            <div className="details">
-                <h1>
-                    {name}
-                    <Ebutt isLoggedIn={isLoggedIn} />
-                </h1>
-                <p>
-                    {description}
-                    <Ebutt isLoggedIn={isLoggedIn} />
-                </p>
-            </div>
+            <Ebutt name={name} description={description} isLoggedIn={isLoggedIn} />
         </div>
     )
 }
