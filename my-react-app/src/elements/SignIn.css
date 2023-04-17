@@ -10,13 +10,13 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 .button {
-    background-color: salmon;
-    padding: 7px 12px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-decoration: none;
-  }
-  .loginform {
-    padding: 2em;
-  }
+  background-color: salmon;
+  padding: 7px 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+}
+.loginform {
+  padding: 2em;
+}

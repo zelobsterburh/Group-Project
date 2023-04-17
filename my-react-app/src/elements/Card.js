@@ -1,3 +1,4 @@
+import Ebutt from "./eButt";
 
 function Card({ img, name, description, isLoggedIn}) {
     return (
@@ -7,17 +8,11 @@ function Card({ img, name, description, isLoggedIn}) {
             <div className="details">
                 <h1>
                     {name}
-                    if(isLoggedIn == true) {
-                    <button className="edit material-symbols-outlined">
-                        edit
-                    </button>
-                    }
+                    <Ebutt isLoggedIn={isLoggedIn} />
                 </h1>
                 <p>
                     {description}
-                    <button className="edit material-symbols-outlined">
-                        edit
-                    </button>
+                    <Ebutt isLoggedIn={isLoggedIn} />
                 </p>
             </div>
         </div>
