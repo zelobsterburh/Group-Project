@@ -1,11 +1,21 @@
-import Ebutt from "./eButt";
-
-function Card({ item, isLoggedIn}) {
+import { Link } from 'react-router-dom';
+function Card(props) {
+    const item = props.item;
     return (
         <div className="Card" style={{
             backgroundImage: `url("` + item.img + `")`
         }}>
-            <Ebutt item={item} isLoggedIn={isLoggedIn} />
+            <div className="details">
+                <h1>
+                    {item.name}
+                </h1>
+                <h2>
+                <Link to={`/ItemDetails/${item._id}`}>{item.name}</Link>
+                </h2>
+                <p>
+                    {item.description}
+                </p>
+            </div>
         </div>
     )
 }
