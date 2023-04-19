@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const router = express.Router();
+
 app.get("/", (req, res) => res.send("Hello world!"));
 const port = process.env.PORT || 8082;
 //app.listen(port, () => console.log(`Server running port ${port}`));
@@ -30,8 +32,8 @@ async function run() {
   }
 }
 run().catch(console.dir);
-const items = ('./routes/api/items');
-app.use('/api/items', items);
+const items = ('/routes/api/items');
+app.use('/api/items', Items);
 router.get('/', (req, res) => {res.send('testing get / item route')});
 router.get('/:id', (req, res) => {res.send('testing get /:id route')});
 router.post('/', (req, res) => {res.send('testing post / route')});
