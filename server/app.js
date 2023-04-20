@@ -1,54 +1,54 @@
-const express = require("express");
+const express = require('express');
+//const connectDB = require('./config/db');
+const mongoose = require('mongoose');
+//const router = require('./routes/routes');
+const cors = require('cors');
 const app = express();
-//const router = express.Router();
-
-//app.get("/", (req, res) => res.send("Hello world!"));
-const port = process.env.PORT || 8082;
-//app.listen(port, () => console.log(`Server running port ${port}`));
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const Items = require("./models/Item");
-const uri = "mongodb+srv://bcj33435:kQKlwN1PuWnJIsya@cluster0.fmafctw.mongodb.net/?retryWrites=true&w=majority";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    app.listen(port);
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
 const items = require('./routes/api/items');
+
+// Connect Database
+//connectDB();
+
+app.use(cors({ origin: true, credentials: true }));
+
+app.use(express.json({ extended: false }));
+
+//
 app.use('/api/items', items);
-/*
-items.get('/', (req, res) => {res.send('testing get / item route')});
-items.get('/:id', (req, res) => {res.send('testing get /:id route')});
-items.post('/', (req, res) => {res.send('testing post / route')});
-items.put('/:id', (req, res) => {res.send('testing put /:id route')});
-*/
-const Item = require('./models/Item')
-items.post('/', (req, res) => {
-  Item.create(req.body)
-  .then((item) => {
-    res.json({ msg: 'Item added successfully'});
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json({ error: 'unable to add this item'});
-  });
+
+app.get('/', (req, res) => res.send('<h2>Hello Web Programmers!</h2>'));
+
+const port = process.env.PORT || 8082;
+const conn_str = "mongodb+srv://bcj33435:kQKlwN1PuWnJIsya@cluster0.fmafctw.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(conn_str,{
+    useUnifiedTopology : true,
+    useNewUrlParser : true
+})
+.then(() => {
+    app.listen(port)
+    console.log(`MongoDB Connection Suceeded...`)
+ })
+ .catch(err => {
+    console.log(`Error in DB Connection ${err}`);
 });
+
+
+// const connectDB = async () => {
+//     try {
+//         mongoose.set('strictQuery', true);
+//         await mongoose.connect(conn_str, {
+//             useNewUrlParser: true,
+//         });
+//         console.log('MongoDB is connected...');
+//     } catch (err) {
+//         console.error(err.message);
+//         process.exit(1);
+//     }
+// }
+
+//app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
