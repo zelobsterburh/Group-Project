@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
-app.get("/", (req, res) => res.send("Hello world!"));
+//app.get("/", (req, res) => res.send("Hello world!"));
 const port = process.env.PORT || 8082;
 //app.listen(port, () => console.log(`Server running port ${port}`));
 
@@ -25,6 +25,7 @@ async function run() {
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
+    app.listen(port);
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
@@ -32,12 +33,12 @@ async function run() {
   }
 }
 run().catch(console.dir);
-const items = ('/routes/api/items');
-app.use('/api/items', Items);
-router.get('/', (req, res) => {res.send('testing get / item route')});
+const items = ('./routes/api/items');
+app.use('/api/items', items);
+/*router.get('/', (req, res) => {res.send('testing get / item route')});
 router.get('/:id', (req, res) => {res.send('testing get /:id route')});
 router.post('/', (req, res) => {res.send('testing post / route')});
-router.put('/:id', (req, res) => {res.send('testing put /:id route')});
+router.put('/:id', (req, res) => {res.send('testing put /:id route')}); */
 router.post('/', (req, res) => {
   Item.create(req.body)
   .then((item) => res.json({ msg: 'Item added successfully'}))
