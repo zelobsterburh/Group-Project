@@ -7,7 +7,7 @@ const port = process.env.PORT || 8082;
 //app.listen(port, () => console.log(`Server running port ${port}`));
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const Items = require("./models/Items");
+const Items = require("./models/Item");
 const uri = "mongodb+srv://bcj33435:kQKlwN1PuWnJIsya@cluster0.fmafctw.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -33,14 +33,22 @@ async function run() {
   }
 }
 run().catch(console.dir);
-const items = require('./models/routes/api/items');
+const items = require('./routes/api/items');
 app.use('/api/items', items);
-/*router.get('/', (req, res) => {res.send('testing get / item route')});
-router.get('/:id', (req, res) => {res.send('testing get /:id route')});
-router.post('/', (req, res) => {res.send('testing post / route')});
-router.put('/:id', (req, res) => {res.send('testing put /:id route')}); */
+/*
+items.get('/', (req, res) => {res.send('testing get / item route')});
+items.get('/:id', (req, res) => {res.send('testing get /:id route')});
+items.post('/', (req, res) => {res.send('testing post / route')});
+items.put('/:id', (req, res) => {res.send('testing put /:id route')});
+*/
+const Item = require('./models/Item')
 items.post('/', (req, res) => {
   Item.create(req.body)
-  .then((item) => res.json({ msg: 'Item added successfully'}))
-  .catch((err) => res.status(400).json({ error: 'unable to add this item'}));
+  .then((item) => {
+    res.json({ msg: 'Item added successfully'});
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json({ error: 'unable to add this item'});
+  });
 });
