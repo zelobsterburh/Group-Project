@@ -15,8 +15,8 @@ function App() {
           <Route path='/SecondPage' element={<SecondPage />} />
           <Route path='/SignIn' element={<SignIn />} />
           <Route path='/CreateItem' element={<CreateItem />} />
-          <Route path='/ItemDetails:id' element={<ItemDetails />}/>
-          <Route path='/EditPage:id' element={<EditPage />}/>
+          <Route path='/ItemDetails/:id' element={<ItemDetails />}/>
+          <Route path='/EditPage/:id' element={<EditPage />}/>
         </Routes>
       </div>
     </Router>

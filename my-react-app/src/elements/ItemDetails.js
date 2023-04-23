@@ -31,7 +31,7 @@ function ItemDetails() {
       });
   };
   const itemCard = (
-    <Card img={item.img} name={item.name} descrption = {item.description}/>
+    <Card item = {item}/>
   )
     return(
         <div className="App">
