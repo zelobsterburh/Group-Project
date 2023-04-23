@@ -8,7 +8,7 @@ function FirstPage() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/api/items')
+      .get('http://localhost:8082/api/items')
       .then((res) => {
         setItems(res.data);
       })

@@ -8,7 +8,7 @@ function SecondPage(props) {
 
   useEffect(() => {
     axios
-      .get('docs.json')
+      .get('http://localhost:8082/api/items')
       .then((res) => {
         setItems(res.data);
       })

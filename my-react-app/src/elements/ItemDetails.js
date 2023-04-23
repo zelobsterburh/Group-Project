@@ -11,7 +11,7 @@ function ItemDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/items/${id}`)
+      .get(`http://localhost:8082/api/items/${id}`)
       .then((res) => {
         setItem(res.data);
       })
@@ -22,7 +22,7 @@ function ItemDetails() {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:3000/api/items/${id}`)
+      .delete(`http://localhost:8082/api/items/${id}`)
       .then((res) => {
         navigate('/');
       })

@@ -14,7 +14,7 @@ function EditPage(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/items/${id}`)
+      .get(`http://localhost:8082/api/items/${id}`)
       .then((res) => {
         setItem({
           name: res.data.name,
@@ -41,7 +41,7 @@ function EditPage(props) {
     };
 
     axios
-      .put(`http://localhost:3000/api/items/${id}`, data)
+      .put(`http://localhost:8082/api/items/${id}`, data)
       .then((res) => {
         navigate(`/ItemDetails/${id}`);
       })

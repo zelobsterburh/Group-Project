@@ -21,7 +21,7 @@ const CreateItem = (props) => {
     e.preventDefault();
 
     axios
-      .post('/api/items', item)
+      .post('http://localhost:8082/api/items', item)
       .then((res) => {
         setItem({
           name: '',
