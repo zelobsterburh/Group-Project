@@ -21,10 +21,7 @@ function FirstPage() {
     items.length === 0
       ? 'there is no item record!'
       : items.map((item, k) => <Card item = {item}  key={k} />);
-
-   <p>
-    <a href="/create-item">+ Add New Item</a>
-   </p>   
+  
       return (
         <div className="App">
            <div className="Menu">
