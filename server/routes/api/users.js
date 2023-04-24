@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const auth = require('../../middleware/auth');
 const User = require("../../models/User");
 //Sign up
-userRouter.post("/signup", async(req,res) => {
+userRouter.post("/signup", async (req,res) => {
     try {
         const {email, password, confirmPassword, username} = req.body;
         if(!email || !password || !username || !confirmPassword) {
@@ -18,6 +18,12 @@ userRouter.post("/signup", async(req,res) => {
         }
         if(confirmPassword != password) {
             return res.status(400).json({ msg: "Both the passwords don't match"});
+        }
+        const existingUser = await User.findOne({email})
+        if(existingUser) {
+            return res
+            .status(400)
+            .json({ msg: "User with the same email exists"});
         }     
         const hashedPassword = await bcryptjs.hash(password, 8);
         const newUser = new User({email, password: hashedPassword, username});
@@ -74,3 +80,4 @@ userRouter.get("/", auth, async(req, res) => {
         id: user._id,
     });
 });
+module.exports = userRouter;
