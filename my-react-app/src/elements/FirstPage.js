@@ -20,7 +20,7 @@ function FirstPage() {
   const itemList =
     items.length === 0
       ? 'there is no item record!'
-      : items.map((item, k) => <Card item = {item}  key={k} />);
+      : items.map((item, k) => <Card item={item}  key={k} edit={false} />);
 
    <p>
     <a href="/create-item">+ Add New Item</a>

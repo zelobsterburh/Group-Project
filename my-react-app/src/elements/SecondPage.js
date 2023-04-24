@@ -20,7 +20,7 @@ function SecondPage(props) {
   const itemList =
     items.length === 0
       ? 'there is no item record!'
-      : items.map((item, k) => <Card item = {item}  key={k} />);
+      : items.map((item, k) => <Card item={item}  key={k} edit={true} />);
 
       return (
         <div className="App">

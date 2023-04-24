@@ -43,7 +43,7 @@ function EditPage(props) {
     axios
       .put(`http://localhost:8082/api/items/${id}`, data)
       .then((res) => {
-        navigate(`/ItemDetails/${id}`);
+        navigate(`/SecondPage`);
       })
       .catch((err) => {
         console.log('Error in EditPage!');
