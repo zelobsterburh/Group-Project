@@ -29,10 +29,10 @@ function FirstPage() {
         <div className="App">
            <div className="Menu">
            <Link
-              to='/SignIn'
+              to='/Login'
               className='login'
             >
-             Sign In
+             Log in
             </Link>
             </div>
           <div className="List">

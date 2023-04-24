@@ -1,3 +1,4 @@
+
 const userSchema = new mongoose.Schema({
     email: {
         required: true,
