@@ -40,28 +40,28 @@ const CreateItem = (props) => {
   return(
   <div className='CreateItem'>
     <div className = 'Menu'>
-    <Link to='/SecondPage' className='SecondPageLink'>
-              Show Page
-            </Link>
+      <Link to='/SecondPage' className='SecondPageLink'>
+        Back
+      </Link>
     </div>
     <div className = 'Form'>
         <form onSubmit={onSubmit}>
               <div className='form-group'>
+                <b>Name</b>
                 <input
                   type='text'
-                  placeholder='Name of the Item'
+                  placeholder='Sandra'
                   name='name'
                   className='form-control'
                   value={item.name}
                   onChange={onChange}
                 />
               </div>
-              <br />
-
               <div className='form-group'>
+                <b>Description</b>
                 <input
                   type='text'
-                  placeholder='Describe this item'
+                  placeholder='Loveable rogue with a bad mouth'
                   name='description'
                   className='form-control'
                   value={item.description}
@@ -69,9 +69,10 @@ const CreateItem = (props) => {
                 />
               </div>
               <div className='form-group'>
+                <b>Image</b>
                 <input
                   type='text'
-                  placeholder='Image of this Item'
+                  placeholder='smiley.jfif'
                   name='img'
                   className='form-control'
                   value={item.img}

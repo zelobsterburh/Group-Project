@@ -53,14 +53,14 @@ function EditPage(props) {
   return (
     <div className = 'EditPage'>
       <div className = 'Menu'>
-      <Link to='/SecondPage' className='SecondPageLink'>
-              Show Page
-            </Link>
+        <Link to='/SecondPage' className='SecondPageLink'>
+          Back
+        </Link>
       </div>
       <div className = 'Form'>
       <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
-              <label htmlFor='name'>Name</label>
+              <b>Name</b>
               <input
                 type='text'
                 placeholder='Name of the Item'
@@ -70,11 +70,9 @@ function EditPage(props) {
                 onChange={onChange}
               />
             </div>
-            <br />
-
             <div className='form-group'>
-              <label htmlFor='description'>Description</label>
-              <textarea
+              <b>Description</b>
+              <input
                 type='text'
                 placeholder='Description of the Item'
                 name='description'
@@ -83,10 +81,9 @@ function EditPage(props) {
                 onChange={onChange}
               />
             </div>
-            <br />
             <div className='form-group'>
-              <label htmlFor='img'>Image</label>
-              <textarea
+              <b>Image</b>
+              <input
                 type='text'
                 placeholder='Item image'
                 name='img'

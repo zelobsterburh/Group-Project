@@ -7,6 +7,7 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1%;
     row-gap: 1%;
+    padding: 1%;
 }
 .Card {
     background-position: center;
@@ -62,4 +63,7 @@
 .Login {
     margin-top: -1em;
     float: right;
+}
+.Form {
+    padding: 1%;
 }

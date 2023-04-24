@@ -22,9 +22,11 @@ function Card({item, edit}) {
                         edit
                     </Link>
                     <div
-                    className="controller material-symbols-outlined" style={{backgroundColor: "#ff0010"}} 
+                    className="controller material-symbols-outlined" style={{backgroundColor: "#ff0010"}}
+                    to={`/`}
                     onClick={() => {
                         onDeleteClick(item._id);
+                        window.location.reload();
                       }}>
                         delete
                     </div>
