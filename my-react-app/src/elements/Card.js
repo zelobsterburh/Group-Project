@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 function Card(props) {
     const item = props.item;
+    const isLoggedIn = props.isLoggedIn;
+    if(isLoggedIn) {
     return (
         <div className="Card" style={{
             backgroundImage: `url("` + item.img + `")`
@@ -9,14 +11,28 @@ function Card(props) {
                 <h1>
                     {item.name}
                 </h1>
-                <h2>
-                <Link to={`/ItemDetails/${item._id}`}>{item.name}</Link>
-                </h2>
                 <p>
                     {item.description}
                 </p>
             </div>
         </div>
     )
+    } else {
+        return(
+            <div className="Card" style={{
+                backgroundImage: `url("` + item.img + `")`
+            }}>
+                <div className="details">
+                    <h2>
+                    <Link to={`/ItemDetails/${item._id}`}>{item.name}</Link>
+                    </h2>
+                    <p>
+                        {item.description}
+                    </p>
+                </div>
+            </div>
+
+        )
+    }
 }
 export default Card;
