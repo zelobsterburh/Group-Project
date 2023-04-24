@@ -25,8 +25,8 @@ function Signup() {
 
             const newUser = { email, password, confirmPassword, username };
 
-            await axios.post("http://localhost8082/api/users.signup", newUser);
-            const loginRes = await axios.post("http://localhost8082/api/users/login", {
+            await axios.post("http://localhost:8082/api/users/signup", newUser);
+            const loginRes = await axios.post("http://localhost:8082/api/users/login", {
                 email,
                 password,
             });
@@ -36,7 +36,7 @@ function Signup() {
             });
             localStorage.setItem("auth-token", loginRes.data.token);
             setLoading(false);
-            navigate('/');
+            navigate('/SecondPage');
         } catch (err) {
             setLoading(false);
             err.response.data.msg && setError(err.response.data.message);

@@ -27,7 +27,7 @@ function Login() {
             });
 
             localStorage.setItem("auth-token", loginRes.data.token);
-            navigate('/');
+            navigate('/SecondPage');
         } catch (err) {
             setLoading(false);
             err.response.data.msg && setError(err.response.data.msg);
@@ -51,7 +51,7 @@ function Login() {
                                     <Form.Control type="email" required onChange={e => setEmail(e.target.value)}/>
                                 </Form.Group>
                                 <Form.Group id="password">
-                                    <Form.Label>Email</Form.Label>
+                                    <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" required onChange={e => setPassword(e.target.value)}/>
                                 </Form.Group>
                                 <Button disabled={loading} className="w-100 mt-2" type="submit">
