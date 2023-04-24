@@ -5,9 +5,44 @@ import SignIn from './elements/SignIn';
 import SecondPage from './elements/SecondPage';
 import EditPage from './elements/EditPage';
 import CreateItem from './elements/CreateItem';
-import ItemDetails from './elements/ItemDetails'
+import ItemDetails from './elements/ItemDetails';
+import { useEffect } from 'react';
+import UserContext from './context/UserContext';
+import Signup from './elements/Signup';
+import Login from './elements/Login';
+
 function App() {
+   const [userData, setUserData] = useState({
+    token: undefined,
+    user: undefined,
+  });
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenResponse = await axios.post(
+        "http://localhost8082/tokenIsValid",
+        null,
+        { headers: { "x-auth-token": token } }
+      );
+      if (tokenResponse.data) {
+        const userRes = await axios.get("http://localhost:8082/", {
+          headers: { "x-auth-token": token },
+        });
+        setUserData({
+          token,
+          user: userRes.data,
+        });
+      }
+    };
+    checkLoggedIn();
+  }, []);
+
  return(
+  <UserContext.Provider value={{ userData, setUserData }}>
   <Router>
       <div>
         <Routes>
@@ -20,6 +55,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </UserContext.Provider>
  );
 }
 
