@@ -5,9 +5,7 @@ body {
     background-color: rgb(242, 141, 141);
     padding: 2em;
 }
-.login {
-    margin-top: -1em;
-    float: right;
+.menu-button {
     text-decoration: none;
-    
+    margin-right: 3%;
 }

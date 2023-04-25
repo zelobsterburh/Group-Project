@@ -40,14 +40,16 @@ const CreateItem = (props) => {
   return(
   <div className='CreateItem'>
     <div className = 'Menu'>
-      <Link to='/SecondPage' className='SecondPageLink'>
+      <Link to='/SecondPage' className='menu-button'>
         Back
       </Link>
     </div>
     <div className = 'Form'>
+      <h2>Create Item</h2>
         <form onSubmit={onSubmit}>
               <div className='form-group'>
                 <b>Name</b>
+                <br />
                 <input
                   type='text'
                   placeholder='Sandra'
@@ -59,17 +61,19 @@ const CreateItem = (props) => {
               </div>
               <div className='form-group'>
                 <b>Description</b>
+                <br />
                 <input
                   type='text'
                   placeholder='Loveable rogue with a bad mouth'
                   name='description'
-                  className='form-control'
+                  className='form-control long-text'
                   value={item.description}
                   onChange={onChange}
                 />
               </div>
               <div className='form-group'>
                 <b>Image</b>
+                <br />
                 <input
                   type='text'
                   placeholder='smiley.jfif'

@@ -26,14 +26,13 @@ function SecondPage(props) {
            <div className="Menu">
             <Link
               to='/CreateItem'
-              className='login'
-              style={{float: "left"}}
+              className='menu-button'
             >
               Create Item
             </Link>
             <Link
                 to='/'
-                className='login'
+                className='menu-button'
             >
               Logout
             </Link>

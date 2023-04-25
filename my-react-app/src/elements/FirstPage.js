@@ -26,15 +26,16 @@ function FirstPage() {
     <a href="/create-item">+ Add New Item</a>
    </p>   
       return (
+        
         <div className="App">
-           <div className="Menu">
-           <Link
+          <div className="Menu">
+            <Link
               to='/Login'
-              className='login'
+              className='menu-button'
             >
-             Log in
+              Log in
             </Link>
-            </div>
+          </div>
           <div className="List">
             {itemList}
           </div>
