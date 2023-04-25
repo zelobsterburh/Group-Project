@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 function Card(props) {
     const item = props.item;
-    const isLoggedIn = props.isLoggedIn;
+    const isLoggedIn = true;
     if(isLoggedIn) {
     return (
         <div className="Card" style={{
