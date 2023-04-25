@@ -27,7 +27,7 @@ function App() {
         token = "";
       }
       const tokenResponse = await axios.post(
-        "http://localhost8082/tokenIsValid",
+        "http://localhost:8082/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
