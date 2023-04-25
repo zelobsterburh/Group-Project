@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const items = require('./routes/api/items');
+const users = require('./routes/api/users');
 
 // Connect Database
 //connectDB();
@@ -15,6 +16,7 @@ app.use(express.json({ extended: false }));
 
 //
 app.use('/api/items', items);
+app.use('/api/users', users);
 
 app.get('/', (req, res) => res.send('<h2>Hello Web Programmers!</h2>'));
 

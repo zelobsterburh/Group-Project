@@ -16,7 +16,6 @@ function SecondPage(props) {
         console.log('Error from FirstPage');
       });
   }, []);
-
   const itemList =
     items.length === 0
       ? 'there is no item record!'
