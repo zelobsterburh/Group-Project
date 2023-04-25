@@ -27,12 +27,12 @@ function App() {
         token = "";
       }
       const tokenResponse = await axios.post(
-        "http://localhost:8082/tokenIsValid",
+        "http://localhost:8082/api/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
       if (tokenResponse.data) {
-        const userRes = await axios.get("http://localhost:8082/", {
+        const userRes = await axios.get("http://localhost:8082/api/users/", {
           headers: { "x-auth-token": token },
         });
         setUserData({
